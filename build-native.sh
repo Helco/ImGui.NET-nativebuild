@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set +e
 
 scriptPath="`dirname \"$0\"`"
 cimguiPath=$scriptPath

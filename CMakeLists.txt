@@ -43,11 +43,11 @@ target_sources(cimgui PRIVATE
     cimgui/imgui/imgui_demo.cpp
     cimgui/imgui/imgui_widgets.cpp
 )
-target_compile_definitions(cimgui PRIVATE "IMGUI_API=__declspec(dllexport)")
 if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/cimgui/imgui/imgui_tables.cpp)
     target_sources(cimgui PRIVATE cimgui/imgui/imgui_tables.cpp)
 endif()
 if (WIN32)
+    target_compile_definitions(cimgui PRIVATE "IMGUI_API=__declspec(dllexport)")
     target_link_libraries(cimgui PUBLIC imm32)
 endif()
 if (IMGUI_FREETYPE)
