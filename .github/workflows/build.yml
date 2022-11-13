@@ -114,6 +114,13 @@ jobs:
           mv win-x86/cimgui.dll win-x86/cimgui.win-x86.dll
           mv win-x86/cimguizmo.dll win-x86/cimguizmo.win-x86.dll
 
+      - name: Rename and move JSON artifacts
+        run: |
+          mv JsonFiles/cimgui/generator/output/definitions.json JsonFiles/cimgui-definitions.json
+          mv JsonFiles/cimguizmo/generator/output/definitions.json JsonFiles/cimguizmo-definitions.json
+          mv JsonFiles/cimgui/generator/output/structs_and_enums.json JsonFiles/cimgui-structs_and_enums.json
+          mv JsonFiles/cimguizmo/generator/output/structs_and_enums.json JsonFiles/cimguizmo-structs_and_enums.json
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
